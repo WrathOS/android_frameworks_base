@@ -27,6 +27,7 @@ import com.android.systemui.plugins.qs.QSTileView;
 import com.android.systemui.qs.QSTileHost;
 import com.android.systemui.qs.external.CustomTile;
 import com.android.systemui.qs.tiles.AirplaneModeTile;
+import com.android.systemui.qs.tiles.AODTile;
 import com.android.systemui.qs.tiles.BatterySaverTile;
 import com.android.systemui.qs.tiles.BluetoothTile;
 import com.android.systemui.qs.tiles.CastTile;
@@ -107,6 +108,7 @@ public class QSFactoryImpl implements QSFactory {
     private final Provider<SmartPixelsTile> mSmartPixelsTileProvider;
     private final Provider<ReadingModeTile> mReadingModeTileProvider;
     private final Provider<DataSwitchTile> mDataSwitchTileProvider;
+    private final Provider<AODTile> mAODTileProvider;
 
     private QSTileHost mHost;
 
@@ -116,6 +118,7 @@ public class QSFactoryImpl implements QSFactory {
             Provider<CellularTile> cellularTileProvider,
             Provider<DndTile> dndTileProvider,
             Provider<DataSwitchTile> dataSwitchTileProvider,
+            Provider<AODTile> aodTileProvider,
             Provider<ColorInversionTile> colorInversionTileProvider,
             Provider<AirplaneModeTile> airplaneModeTileProvider,
             Provider<WorkModeTile> workModeTileProvider,
@@ -181,6 +184,7 @@ public class QSFactoryImpl implements QSFactory {
         mLiveDisplayTileProvider = liveDisplayTileProvider;
         mReadingModeTileProvider = readingModeTileProvider;
         mDataSwitchTileProvider = dataSwitchTileProvider;
+        mAODTileProvider = aodTileProvider;
     }
 
     public void setHost(QSTileHost host) {
@@ -252,7 +256,7 @@ public class QSFactoryImpl implements QSFactory {
                 return mHeadsUpTileProvider.get();
             case "screenshot":
                 return mScreenshotTileProvider.get();
-	    case "reboot":
+            case "reboot":
                 return mRebootTileProvider.get();
             case "gaming":
                 return mGamingModeTileProvider.get();
@@ -266,6 +270,8 @@ public class QSFactoryImpl implements QSFactory {
                 return mReadingModeTileProvider.get();
             case "dataswitch":
                 return mDataSwitchTileProvider.get();
+            case "aod":
+                return mAODTileProvider.get();
         }
 
         // Intent tiles.
