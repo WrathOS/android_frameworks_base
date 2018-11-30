@@ -5526,6 +5526,16 @@ public final class Settings {
         public static final String SWITCH_STYLE = "switch_style";
 
         /**
+         * Settings dashboard icon style
+         * @hide
+         */
+        public static final String THEMING_SETTINGS_DASHBOARD_ICONS =
+                "theming_settings_dashboard_icons";
+
+        /** @hide */
+        private static final Validator THEMING_SETTINGS_DASHBOARD_ICONS_VALIDATOR = ANY_INTEGER_VALIDATOR;
+
+        /**
          * Settings to backup. This is here so that it's in the same place as the settings
          * keys and easy to update.
          *
@@ -5620,6 +5630,7 @@ public final class Settings {
             SCREENSHOT_SOUND,
             NOTIFICATION_HEADERS,
             VOLUME_DIALOG_TIMEOUT,
+            THEMING_SETTINGS_DASHBOARD_ICONS,
         };
 
         /**
@@ -5790,6 +5801,7 @@ public final class Settings {
             PRIVATE_SETTINGS.add(DISPLAY_PICTURE_ADJUSTMENT);
             PRIVATE_SETTINGS.add(LIVE_DISPLAY_HINTED);
             PRIVATE_SETTINGS.add(VOLUME_DIALOG_TIMEOUT);
+            PRIVATE_SETTINGS.add(THEMING_SETTINGS_DASHBOARD_ICONS);
         }
 
         /**
@@ -5935,6 +5947,7 @@ public final class Settings {
             VALIDATORS.put(DISPLAY_PICTURE_ADJUSTMENT, DISPLAY_PICTURE_ADJUSTMENT_VALIDATOR);
             VALIDATORS.put(LIVE_DISPLAY_HINTED, LIVE_DISPLAY_HINTED_VALIDATOR);
             VALIDATORS.put(VOLUME_DIALOG_TIMEOUT,VOLUME_DIALOG_TIMEOUT_VALIDATOR);
+            VALIDATORS.put(THEMING_SETTINGS_DASHBOARD_ICONS, THEMING_SETTINGS_DASHBOARD_ICONS_VALIDATOR);
         }
 
         /**
