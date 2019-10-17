@@ -5543,6 +5543,16 @@ public final class Settings {
          * @hide
          */
         public static final String QS_TILE_STYLE = "qs_tile_style";
+		
+		/**
+         * Whether footer #FeelTheWrath text shows
+         * @hide
+         */
+        public static final String FOOTER_TEXT_SHOW = "footer_text_show";
+
+        /** @hide */
+        private static final Validator FOOTER_TEXT_SHOW_VALIDATOR =
+                BOOLEAN_VALIDATOR;
 
 	/**
          * Whether to use new QS panel bg tint or not
