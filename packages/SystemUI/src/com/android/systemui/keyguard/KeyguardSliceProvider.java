@@ -458,7 +458,7 @@ public class KeyguardSliceProvider extends SliceProvider implements
     @Override
     public void onMetadataOrStateChanged(MediaMetadata metadata, @PlaybackState.State int state) {
         synchronized (this) {
-            boolean nextVisible = NotificationMediaManager.isPlayingState(state);
+            boolean nextVisible = NotificationMediaManager.isPlayingState(state) || mMediaManager.getNowPlayingTrack() != null;
             mMediaHandler.removeCallbacksAndMessages(null);
             if (mMediaIsVisible && !nextVisible && mStatusBarState != StatusBarState.SHADE) {
                 // We need to delay this event for a few millis when stopping to avoid jank in the
@@ -479,7 +479,8 @@ public class KeyguardSliceProvider extends SliceProvider implements
     }
 
     private void updateMediaStateLocked(MediaMetadata metadata, @PlaybackState.State int state) {
-        boolean nextVisible = NotificationMediaManager.isPlayingState(state);
+        boolean nowPlayingAvailable = mMediaManager.getNowPlayingTrack() != null;
+        boolean nextVisible = NotificationMediaManager.isPlayingState(state) || nowPlayingAvailable;
         CharSequence title = null;
         if (metadata != null) {
             title = metadata.getText(MediaMetadata.METADATA_KEY_TITLE);
@@ -497,6 +498,13 @@ public class KeyguardSliceProvider extends SliceProvider implements
         mMediaTitle = title;
         mMediaArtist = artist;
         mMediaIsVisible = nextVisible;
+
+        if (mMediaTitle == null && nowPlayingAvailable) {
+            mMediaTitle = mMediaManager.getNowPlayingTrack();
+            mMediaIsVisible = true;
+            mMediaArtist = null;
+        }
+
         notifyChange();
     }
 
