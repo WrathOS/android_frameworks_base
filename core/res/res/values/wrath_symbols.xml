@@ -178,4 +178,7 @@
     <!-- Whether or not we should show vendor mismatch message -->
     <java-symbol type="bool" name="config_show_vendor_mismatch_message" />
 
+    <!-- Themes -->
+    <java-symbol type="color" name="theme_generic_semi_transparent_color" />
+
 </resources>
