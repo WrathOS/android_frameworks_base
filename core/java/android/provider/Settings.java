@@ -4860,9 +4860,13 @@ public final class Settings {
          * the setting value. See an example above.
          */
         public static final String HEADS_UP_STOPLIST_VALUES = "heads_up_stoplist_values";
+
         /** @hide */
         private static final Validator HEADS_UP_STOPLIST_VALUES_VALIDATOR =
                 ANY_STRING_VALIDATOR;
+
+        /** @hide */
+        public static final String AUDIO_PANEL_VIEW_POSITION = "audio_panel_view_position";
 
         /**
          * Which applications to disable heads up notifications for
