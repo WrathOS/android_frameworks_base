@@ -5509,6 +5509,12 @@ public final class Settings {
         public static final String FOD_ICON = "fod_icon";
 
         /**
+         * FOD recognizing animation picker
+         * @hide
+         */
+        public static final String FOD_ANIM = "fod_anim";
+
+        /**
          * FOD recognizing animation
          * @hide
          */
