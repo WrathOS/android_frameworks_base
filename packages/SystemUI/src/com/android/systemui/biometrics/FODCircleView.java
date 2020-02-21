@@ -635,6 +635,10 @@ class FODAnimation extends ImageView {
             this.setBackgroundResource(R.drawable.fod_miui_whirlwind_recognizing_anim);
         } else if (fodanim == 17) {
             this.setBackgroundResource(R.drawable.fod_miui_aurora_recognizing_anim);
+        } else if (fodanim == 18) {
+            this.setBackgroundResource(R.drawable.fod_coloros7_1_recognizing_anim);
+        } else if (fodanim == 19) {
+            this.setBackgroundResource(R.drawable.fod_coloros7_2_recognizing_anim);
         }
         recognizingAnim = (AnimationDrawable) this.getBackground();
     }
