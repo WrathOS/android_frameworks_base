@@ -7437,5 +7437,7 @@ message MetricsEvent {
     //WrathOS Metrics Constants
     WRATH = 2000;
 
+    // Panel for Bluetooth
+    PANEL_BLUETOOTH = 9004;
   }
 }
