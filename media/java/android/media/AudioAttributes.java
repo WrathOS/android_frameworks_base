@@ -1248,7 +1248,7 @@ public final class AudioAttributes implements Parcelable {
     /**
      * @hide
      */
-    static int capturePolicyToFlags(@CapturePolicy int capturePolicy, int flags) {
+   public static int capturePolicyToFlags(@CapturePolicy int capturePolicy, int flags) {
         flags &= ~FLAG_NO_SYSTEM_CAPTURE & ~FLAG_NO_MEDIA_PROJECTION;
         return flags;
     }

@@ -66,7 +66,7 @@ public class ViewConfiguration {
      * a long press
      * @hide
      */
-    private static final int DEFAULT_LONG_PRESS_TIMEOUT = 400;
+    public static final int DEFAULT_LONG_PRESS_TIMEOUT = 400;
 
     /**
      * Defines the default duration in milliseconds between the first tap's up event and the second
