@@ -66,9 +66,6 @@ public class FODCircleView extends ImageView {
 
     private int mDreamingOffsetY;
 
-    private int mColor;
-    private int mColorBackground;
-
     private boolean mIsBouncer;
     private boolean mIsDreaming;
     private boolean mIsKeyguard;
@@ -147,8 +144,6 @@ public class FODCircleView extends ImageView {
     public FODCircleView(Context context) {
         super(context);
 
-        setScaleType(ScaleType.CENTER);
-
         IFingerprintInscreen daemon = getFingerprintInScreenDaemon();
         if (daemon == null) {
             throw new RuntimeException("Unable to get IFingerprintInscreen");
@@ -165,11 +160,8 @@ public class FODCircleView extends ImageView {
 
         Resources res = context.getResources();
 
-        mColor = res.getColor(R.color.config_fodColor);
-        mPaintFingerprint.setColor(mColor);
         mPaintFingerprint.setAntiAlias(true);
-
-        mColorBackground = res.getColor(R.color.config_fodColorBackground);
+        mPaintFingerprint.setColor(res.getColor(R.color.config_fodColor));
 
         mWindowManager = context.getSystemService(WindowManager.class);
 
