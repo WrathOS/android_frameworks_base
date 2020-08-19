@@ -26,6 +26,8 @@ import android.graphics.Color;
 import android.graphics.drawable.Animatable2;
 import android.graphics.drawable.Animatable2.AnimationCallback;
 import android.graphics.drawable.Drawable;
+import android.os.UserHandle;
+import android.provider.Settings.System;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.ImageView.ScaleType;
