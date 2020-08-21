@@ -67,7 +67,7 @@ public class ThemesUtils {
     };
 
     public static void updateSwitchStyle(IOverlayManager om, int userId, int switchStyle) {
-        if (switchStyle == 1) {
+        if (switchStyle == 2) {
             stockSwitchStyle(om, userId);
         } else {
             try {
