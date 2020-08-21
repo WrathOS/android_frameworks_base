@@ -566,7 +566,8 @@ class FODAnimation extends ImageView {
         R.drawable.fod_miui_whirlwind_recognizing_anim,
         R.drawable.fod_miui_aurora_recognizing_anim,
         R.drawable.fod_coloros7_1_recognizing_anim,
-        R.drawable.fod_coloros7_2_recognizing_anim
+        R.drawable.fod_coloros7_2_recognizing_anim,
+        R.drawable.fod_miui_neon_recognizing_anim
     };
 
     public FODAnimation(Context context, int mPositionX, int mPositionY) {
